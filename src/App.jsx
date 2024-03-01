@@ -1,14 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { useParallax } from "react-scroll-parallax";
-import { Parallax } from "react-scroll-parallax";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { BiSolidLeftArrow } from "react-icons/bi";
 import { BiSolidUpArrow } from "react-icons/bi";
 import { BiSolidDownArrow } from "react-icons/bi";
+import phoneImg from "./assets/imgphone.webp";
 
 export default function App() {
-  const [progress, setProgress] = useState();
-  const [entered, setEntered] = useState();
   const [height, setHeight] = useState(100);
   const lastScrollY = useRef(0);
   const targetRef = useRef(null);
@@ -41,22 +38,22 @@ export default function App() {
   }, [height]);
 
   return (
-    <main className=" w-full min-h-screen flex flex-col gap-5 p-4">
-      <section className=" w-full bg-cyan-200 h-screen border rounded-md font-montserrat flex items-center justify-center text-5xl font-bold">
+    <main className=" w-full min-h-screen flex flex-col gap-5 md:p-4">
+      <section className=" w-full bg-cyan-200 h-screen border rounded-md font-montserrat flex items-center justify-center text-xl  md:text-5xl font-bold">
         Page 1
       </section>
-      <section className=" w-full bg-cyan-200 h-screen border rounded-md font-montserrat flex items-center justify-center text-5xl font-bold">
+      <section className=" text-xl w-full bg-cyan-200 h-screen border rounded-md font-montserrat flex items-center justify-center md:text-5xl font-bold">
         Page 2
       </section>
 
       <section
-        className=" relative w-full bg-white h-[500vh] rounded-md p-5"
+        className=" relative w-full bg-white min-h-screen md:h-[500vh] rounded-md md:p-5"
         ref={targetRef}
       >
-        <h1 className=" w-[800px] mx-auto font-montserrat text-5xl mb-28 font-semibold text-center">
+        <h1 className=" w-full md:w-[800px] mx-auto font-montserrat text-2xl md:text-5xl mb-8 md:mb-28 font-semibold text-center">
           The Clever All-In-One Customer Engagement Platform
         </h1>
-        <div className=" sticky top-20 left-0 w-[70vw] mx-auto mb-20">
+        <div className="hidden md:block sticky top-20 left-0 w-[70vw] mx-auto mb-20">
           <div
             style={{ height: height }}
             className={` w-full relative mx-auto border border-dashed rounded-xl border-black min-h-[300px]`}
@@ -126,8 +123,9 @@ export default function App() {
             </div>
           </div>
         </div>
+        <img src={phoneImg} className=" w-80 mx-auto object-cover" alt="" />
       </section>
-      <section className=" w-full bg-cyan-200 h-screen border rounded-md font-montserrat flex items-center justify-center text-5xl font-bold">
+      <section className="text-xl w-full bg-cyan-200 h-screen border rounded-md font-montserrat flex items-center justify-center md:text-5xl font-bold">
         Page 4
       </section>
     </main>
