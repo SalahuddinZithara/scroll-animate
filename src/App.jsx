@@ -123,7 +123,11 @@ export default function App() {
             </div>
           </div>
         </div>
-        <img src={phoneImg} className=" w-80 mx-auto object-cover" alt="" />
+        <img
+          src={phoneImg}
+          className=" md:hidden w-80 mx-auto object-cover"
+          alt=""
+        />
       </section>
       <section className="text-xl w-full bg-cyan-200 h-screen border rounded-md font-montserrat flex items-center justify-center md:text-5xl font-bold">
         Page 4
